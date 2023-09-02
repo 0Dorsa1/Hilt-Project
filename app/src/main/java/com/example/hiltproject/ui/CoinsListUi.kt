@@ -13,13 +13,6 @@ import com.example.hiltproject.di.RetrofitModule
 import com.example.hiltproject.model.DigitalCoin
 import com.example.hiltproject.viewmodel.CoinsViewModel
 
-@Preview
-@Composable
-private fun Preview() {
-    val coinsViewModel = CoinsViewModel(Application(),RetrofitModule)
-
-    CoinsList(coinsViewModel)
-}
 
 @Composable
 fun CoinsList(coinsViewModel: CoinsViewModel) {
