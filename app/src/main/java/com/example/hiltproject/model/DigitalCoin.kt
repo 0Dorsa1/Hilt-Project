@@ -4,6 +4,13 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
+data class GetCoinListResponse(
+    val data: ArrayList<DigitalCoin>,
+    val status: Boolean
+) : Parcelable
+
+
+@Parcelize
 data class DigitalCoin(
     val date: Long,
     val symbol: String,
