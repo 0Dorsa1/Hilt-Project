@@ -15,7 +15,9 @@ class Repository @Inject constructor(val api: LivePriceApi) {
                 pageIndex = 0,
                 type = 1
             )
+            val a = 1
         } catch (e: Exception) {
+            val a = 1
         }
     }
 }
