@@ -22,3 +22,4 @@ data class DigitalCoin(
     val id: String,
     val lastPrice: Double
 ) : Parcelable
+

@@ -3,6 +3,7 @@ package com.example.hiltproject.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.hiltproject.R
+import com.example.hiltproject.network.DetailsRepository
 import com.example.hiltproject.network.LivePriceApi
 import com.example.hiltproject.network.Repository
 import dagger.hilt.android.AndroidEntryPoint
@@ -16,11 +17,14 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var repository:Repository
+    @Inject
+    lateinit var detailedRepository: DetailsRepository
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         CoroutineScope(Dispatchers.Main).launch {
             repository.call()
+            detailedRepository.call()
         }
     }
 }

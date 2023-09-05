@@ -6,7 +6,7 @@ import com.example.hiltproject.model.GetCoinListResponse
 import javax.inject.Inject
 
 class Repository @Inject constructor(val api: LivePriceApi) {
-    private var response: GetCoinListResponse? = null  // Use nullable type to indicate it's not initialized
+    private var response: GetCoinListResponse? = null
 
     suspend fun call() {
         try {
@@ -18,6 +18,23 @@ class Repository @Inject constructor(val api: LivePriceApi) {
             val a = 1
         } catch (e: Exception) {
             val a = 1
+        }
+    }
+
+
+
+}
+
+class DetailsRepository @Inject constructor(val api: LivePriceApi){
+    private var response: GetCoinListResponse? = null
+    suspend fun call() {
+        try {
+            response = api.getDetails(
+                id= "61f3e31f23f1f2048a87d945"
+            )
+            val b = 1
+        } catch (e: Exception) {
+            val b = 1
         }
     }
 }

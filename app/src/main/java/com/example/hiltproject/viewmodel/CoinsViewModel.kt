@@ -13,8 +13,8 @@ import javax.inject.Inject
 @HiltViewModel
 class CoinsViewModel @Inject constructor(
     application: Application,
-    private val apiService: LivePriceApi,
-    private val retrofit: Retrofit
+    private val liveApiService: LivePriceApi,
+    private val retrofit: Retrofit,
 ) : AndroidViewModel(application) {
 
     private val _coins: MutableLiveData<List<DigitalCoin>> = MutableLiveData()

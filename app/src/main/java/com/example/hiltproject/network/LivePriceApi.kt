@@ -12,4 +12,10 @@ interface LivePriceApi {
         @Query("pageIndex") pageIndex: Int,
         @Query("type") type: Int
     ): GetCoinListResponse
+
+    @GET("api/liveprice-1.0.0/prices/details")
+    suspend fun getDetails(
+        @Query("id") id: String
+    ) : GetCoinListResponse
 }
+

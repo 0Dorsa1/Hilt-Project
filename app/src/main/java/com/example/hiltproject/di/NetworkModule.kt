@@ -6,7 +6,6 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
-import retrofit2.create
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
@@ -17,4 +16,5 @@ object NetworkModule {
     internal fun providesLivePriceApi(retrofit: Retrofit): LivePriceApi {
         return retrofit.create(LivePriceApi::class.java)
     }
+
 }
